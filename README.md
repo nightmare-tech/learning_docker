@@ -74,16 +74,16 @@ Why?
 └─$ sudo docker run -itd --rm --network asgard --name loki busybox
 ```
 
-![[Pasted image 20220808233014.png]]
+![one](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220808233014.png)
 
 # the HOST
 When deploying the `nginx`  container to HOST network:
-![[Pasted image 20220808233206.png]]
+![host](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220808233206.png)
 It will share the host's IP address, ports.
 Therefore we don't have to expose any ports.
 
 # MACVLAN
-![[Pasted image 20220808233624.png]]
+![macvlan](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220808233624.png)
 They will connect to the access point to which the host is connected to.
 They act like virtual machines.
 But all containers connect to the same network and can cause problems with router. (Promiscous Mode)
@@ -149,7 +149,7 @@ afcc51f91674b0b4135282337cdd0a1a85472e68f2b25db2291ba1cb9a537413
 # Creating an IPvlan Network (L3)
 In this the containers will connect to host like its a router.
 Its Layer 3 based - IP addresses
-![[Pasted image 20220810150944.png]]
+![ipvlan](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220810150944.png)
 
 - Thor can ping Loki or Mjolnir.
    Basiclly when seprate networks share the same parent interface they can talk to each other.
@@ -256,12 +256,10 @@ Creating network "coffeetime_default" with the default driver
 Creating coffeetime_website_1 ... done
 ```
 So `docker-compose` created the website with the name `coffeetime_website_1` as the name of the directory was `coffeetime`. And it also made a default bridged network and put the container inside.
-![[Pasted image 20220924183655.png]]
+![dc1](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220924183655.png)
 `docker-compsoe ps` will only show containers made with `docker-compose`
-![[Pasted image 20220924183838.png]]
-
 And we can access the website within the network.
-![[Pasted image 20220924184030.png]]
+![dc2](https://github.com/nightmare-tech/learning_docker/blob/32689f805db739d337e1cab5fb14a73773ff4f4c/%23source/Pasted%20image%2020220924184030.png)
 
 ##### Stop/Remove all docker-compose created containers
 ```terminal
