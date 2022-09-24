@@ -313,3 +313,8 @@ If we run `sudo docker-compose up -d` after we edit the `.yaml` file, accordingl
 So in our case it will make the network and put the container in the network.
 
 Similarly we can make more complex `.yaml` files like [these](https://github.com/vulhub/vulhub).
+---
+## Credits
+I was introduced to Docker by [NetworkChuck](https://www.youtube.com/c/NetworkChuck/videos)
+and this file is just a writeup what he taught in his videos about Docker. 
+You can check out his [channel](https://www.youtube.com/c/NetworkChuck/videos) if you prefer video format.
