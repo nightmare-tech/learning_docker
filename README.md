@@ -314,6 +314,24 @@ So in our case it will make the network and put the container in the network.
 
 Similarly we can make more complex `.yaml` files like [these](https://github.com/vulhub/vulhub).
 ---
+#### But what if there is an easier way?
+# Enter Portainer
+#### Making a volume for Portainer to keep data persistent
+`sudo docker volume create portainer_stuff`
+
+#### Initialising Portainer
+`sudo docker run -d -p 9443:9443 -p 8000:8000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_stuff:/data portainer/portainer-ce:latest`
+
+Now we can access Portainer GUI via a browser.
+In the addressbar of your browser   type in the IP address of your machine with the port 9443 and USE HTTPS.
+eg: 
+`https://192.168.122.24:9443/`
+Create user and link on Get Started
+Now,
+![webui](https://github.com/nightmare-tech/learning_docker/blob/24bb412b874504bd461f276aef228fd9c959fdaf/%23source/Pasted%20image%2020220930230241.png)
+We can do everything we do from the docker CLI within this which is awesome as we now can deploy docker interactively and easily.
+ 
+---
 ## Credits
 I was introduced to Docker by [NetworkChuck](https://www.youtube.com/c/NetworkChuck/videos)
 and this file is just a writeup what he taught in his videos about Docker. 
